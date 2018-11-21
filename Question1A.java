@@ -7,5 +7,4 @@ public class Question1A {
         
     }
     
-    
 }
