@@ -18,6 +18,7 @@ public class Question1A {
         int i = 0;
             while ( user > 0){
                 temp = (user % 10);
+           
                 for (; i < 3;){
                     a[i] = temp;
                    // System.out.println(temp);
