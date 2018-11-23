@@ -16,7 +16,10 @@ public class PartBQuestion2 {
         int nostudent = Integer.parseInt(num);
         int idx;
         for (idx=0;idx<nostudent;idx++){
-            String student1 = JOptionPane.showInputDialog(null,"");
+            String name = JOptionPane.showInputDialog(null,"Student name?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
+            System.out.print("NAME : "+name);
+            String idnum = JOptionPane.showInputDialog(null,"Student ID?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("\t\t ID NO : "+idnum);
         }
         
     }
