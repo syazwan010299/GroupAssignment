@@ -1,4 +1,10 @@
-
+/**
+ * Program Name : Part A Question 2
+ * Description  : 
+ * @author      : Mohamad Syazwan Zulfaris bin Zainal - B04180021
+ *              : Nor Fariha binti Serzali - B04180022
+ * @version 2.AI
+ */
 package GroupAssignment;
 
 import javax.swing.JOptionPane;

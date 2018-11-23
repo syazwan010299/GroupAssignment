@@ -1,14 +1,16 @@
-/* Name : 1 ) Mohd Syazwan Zulfaris bin Zainal ( B04180021 )
-          2 ) Nor Fariha binti Serzali ( B04180022 )
-   Task : Part A Question 1 
-   Date : 29/11/2018 
-*/
+/**
+ * Program Name : Part A Question 1
+ * Description  : 
+ * @author      : Mohamad Syazwan Zulfaris bin Zainal - B04180021
+ *              : Nor Fariha binti Serzali - B04180022
+ * @version 1.AI
+ */
 package GroupAssignment;
 
 import java.lang.Math;//import Math Class
 import javax.swing.JOptionPane;//import windows
 
-public class Question1A {
+public class PartAQuestion1 {
     public static void main(String[] args) {
         char a = 'y';//variable to loop the process until user do not want to play anymore
         while ( a == 'y'){//if the user key in y 
@@ -19,12 +21,8 @@ public class Question1A {
     
        
         int replace = user;// copy the user input into replace variable
-        int temp1 = 0;//to save the first digit of the user input
-        int temp2 = 0;//to save the second digit of the user input
-        int temp3 = 0;//to save the third digit of the user input
-        int random1 = 0;//to save the first digit of the random numbers
-        int random2 = 0;//to save the second digit of the random numbers
-        int random3 = 0;//to save the third digit of the random numbers
+        int temp1,temp2,temp3;//to save the first, second and third digit of the user input
+        int random1,random2,random3;//to save the first, second and third digit of the random numbers
         
         // To check the number of digits in the user input
         int number = 0;// variables for counter to calculate the number of digits in the user input
@@ -60,15 +58,14 @@ public class Question1A {
             if ((random1==temp1)&&(random2==temp2)&&(random3==temp3)){//if the user input matches the lottery in exact order,the awrd is RM5000
                 JOptionPane.showMessageDialog(null,"CONGRATULATION!!\n You have won RM 5000","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
             }else if (((temp1==random1)||(temp1==random2)||(temp1==random3))&&((temp2==random1)||(temp2==random2)||(temp2==random3))&&((temp3==random1)||(temp3==random2)||(temp3==random3))){//if the user input matches three digits in different order the award is RM2000
-                JOptionPane.showMessageDialog(null,"CONGRATULATION!! You have won RM2000","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"CONGRATULATION!!\n You have won RM2000","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
             }else if(((temp1==random1)||(temp1==random2)||(temp1==random3))||((temp2==random1)||(temp2==random2)||(temp2==random3))||((temp3==random1)||(temp3==random2)||(temp3==random3))){//if any 1 or 2 digits in the user input matches the lottery, the award is RM500
-                JOptionPane.showMessageDialog(null,"CONGRATULATION!! You have won RM500","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"CONGRATULATION!!\n You have won RM500","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
             }else{//if any number does not meet lottery
                 JOptionPane.showMessageDialog(null,"HA HA HA You lose.","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
             }
-            
         }
-        String check = JOptionPane.showInputDialog(null,"Do You Want To Repeat\n y-YES \t n-NO","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to repeat or not 
+        String check = JOptionPane.showInputDialog(null,"Do you want to try again?\n y-YES \t n-NO","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to repeat or not 
         a = check.charAt(0);
         }//end of the while
        
@@ -91,5 +88,4 @@ public class Question1A {
            d /= 10;
            return d;
        }
-       
     }
