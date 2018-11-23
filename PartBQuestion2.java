@@ -11,7 +11,13 @@ import javax.swing.JOptionPane;
 
 public class PartBQuestion2 {
     public static void main(String[] args) {
-        String num = JOptionPane.showInputDialog(null,"");
-        System.out.println("How many student?");
+        String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
+        System.out.println("Number of students : "+num);
+        int nostudent = Integer.parseInt(num);
+        int idx;
+        for (idx=0;idx<nostudent;idx++){
+            String student1 = JOptionPane.showInputDialog(null,"");
+        }
+        
     }
 }
