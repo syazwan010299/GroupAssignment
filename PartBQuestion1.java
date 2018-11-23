@@ -129,7 +129,7 @@ class GST{
     float r = (float) 0.0f;
     float s = (float) 0.0f;
     public float count(float e){
-        r = (float) ((0.06) * e);
+        r = (float) ((0.06f) * e);
         s = (float)(r + e);
         return s;
     }
