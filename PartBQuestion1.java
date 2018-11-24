@@ -7,21 +7,28 @@
  */
 package GroupAssignment;
 
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;//import class JOptionPane to use the windows input and output
+import java.math.BigDecimal;//import class BigDecimal to convert float into 2 decimal places
+import java.time.LocalDateTime;//import class LocalDateTime for date and time
+import java.time.format.DateTimeFormatter;//import class DateTimeFormatter to set the structure of date and time
+import java.util.Locale;//import class Locale for to specific the region
 
 public class PartBQuestion1 {
+    private static final DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");//set the structure of date and time
     public static void main(String[] args) {
-
-        Rebate rebate = new Rebate();
-        GST gst = new GST();
-        Discounts g = new Discounts();
-        int discount = 0,discount1 = 0,discount2 = 0;
-        char y = 'y';
-        int quantity1=0,quantity2=0,quantity3=0,quantity4=0,quantity5=0,quantity6=0,quantity7=0,quantity8=0;
-        float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;
-        String input = JOptionPane.showInputDialog(null,"Do You Have Membership Card\nY-Yes \t N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);
+        LocalDateTime now = LocalDateTime.now();//create new object to calculate the time and date 
+        Rebate rebate = new Rebate();//create new object to calculate the rebate of the transaction
+        GST gst = new GST();//create new object to claculate the Government Service Tax
+        Discounts g = new Discounts();//create new object to calculate the discounts
+        int discount = 0,discount1 = 0,discount2 = 0;//variables for calculate the discounts
+        char y = 'y';//To check the user has membership card or not
+        int quantity1=0,quantity2=0,quantity3=0,quantity4=0,quantity5=0,quantity6=0,quantity7=0,quantity8=0;//variables for items that user want to buy
+        float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;//variables for each of items times with how many for every item that user want
+        String input = JOptionPane.showInputDialog(null,"Do You Have Membership Card?\nY-Yes    N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);//ask the user if he or she have membership card or not
         y = input.charAt(0);
+        JOptionPane.showMessageDialog(null,"Code Item\n1 - Shoe   2 - Shirt\n3 - Pants   4 - Jeans\n5 - Fan   6 - Iron\n7 - Tray   8 - Rice","Transactio System",JOptionPane.INFORMATION_MESSAGE);
         if ( (y == 'y') || (y == 'Y')){
+            System.out.println(date.format(now));
             System.out.println("----------------------------UNIMY SUPERMARKET---------------------------------");
             System.out.println("Code\t\tName\t\tPrice\t\tQuantity\t\tTotal");
             System.out.println("------------------------------------------------------------------------------");
@@ -81,8 +88,13 @@ public class PartBQuestion1 {
              quantity8 = Integer.parseInt(a8);
              total8 = (float)(quantity8 * 24.76);
              System.out.println("8\t\tRICE\t\tRM24.76\t\t"+quantity8+"\t\t\t"+"RM"+total8);      
-            }//end of the if else
-            
+            }else if ( id >= 9){
+                JOptionPane.showMessageDialog(null,"You key in wrong code !!","Error Message",JOptionPane.ERROR_MESSAGE);
+                product++;
+            }else if ( id == 0){
+                JOptionPane.showMessageDialog(null,"You key in wrong code !!","Error Message",JOptionPane.ERROR_MESSAGE);
+                product++;
+            }
             --product;
             }//end of the while
             System.out.println("------------------------------------------------------------------------------");
@@ -102,32 +114,50 @@ public class PartBQuestion1 {
             System.out.println("Items Quantity : " + totalquantity);
             System.out.println("Membership : Yes");
             System.out.println("Membership Discount : 10%");
-            System.out.println("Total Purchased : "+ String.format("%.2f",totalprice));
+            System.out.println("Total Purchased : RM"+ String.format("%.2f",totalprice));
             System.out.println("Rebates : " + totalrebate);
+            totalprice = bundar(totalprice, 2);
             totalgst = gst.count(totalprice);
+            totalgst = bundar(totalgst, 2);
             totaldiscounts = g.calc(totalgst);
+            totaldiscounts = bundar(totaldiscounts, 2);
             System.out.println("GST(Goverment Service Tax) : 6%");
             
             memberdiscounts = (float)((0.9) * totalgst);
+            memberdiscounts = bundar(memberdiscounts, 2);
             System.out.println("------------------------------------------------------------------------------");  
             netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);//check balik totaldiscount
-            System.out.println("Net Purchased : " + String.format("%.2f",netpurchased));
+            netpurchased = bundar( netpurchased, 2);
+            System.out.println("Net Purchased : RM" + String.format("%.2f",netpurchased));
            
             float amountpay = 0.0f;
             while ( amountpay < netpurchased){
             String pay = JOptionPane.showInputDialog(null,"You can pay now :)","Transaction System",JOptionPane.QUESTION_MESSAGE);
-            amountpay = Integer.parseInt(pay); 
+            amountpay = Float.parseFloat(pay); 
+            if ( amountpay < netpurchased){
+                JOptionPane.showMessageDialog(null,"Your cash is not enough!","Transaction System",JOptionPane.ERROR_MESSAGE);
+            }//end of the if else
+            
             }// end of the while
-            System.out.println("Amount Paid : " + String.format("%.2f",amountpay));
+            System.out.println("Amount Paid : RM" + String.format("%.2f",amountpay));
             float change = 0.0f;
             change = ((-1)*(netpurchased - amountpay));
             System.out.println("Changed : RM" + String.format("%.2f",change));
-                    
+            System.out.println("------------------------------------------------------------------------------");
+            
         }else if( (y == 'n') || (y == 'N')){
             System.out.println("d");
         }//end of the else
         
     }//end of the main
+    
+    public static float bundar(float q , int c){
+        BigDecimal big = new BigDecimal(q);
+        big = big.setScale(c,BigDecimal.ROUND_HALF_UP);
+        return big.floatValue();
+    }
+    
+    
 }
 class Rebate{
     
