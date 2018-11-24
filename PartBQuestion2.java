@@ -32,13 +32,16 @@ public class PartBQuestion2 {
             String idnum = JOptionPane.showInputDialog(null,"Student ID?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int id = Integer.parseInt(idnum);
             
-            if ((id>999)&&(id<10000)){
-                System.out.println("\t\t ID NO : "+id);
-            }else{
+            while (id != 0){
+                //String idnum = JOptionPane.showInputDialog(null,"Student ID?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+                //id = Integer.parseInt(idnum);
+                
+            if ((id>=1000)&&(id>9999)){
                 JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
-                a.IDnumber();
+                System.out.println("\t\t ID NO : "+id);
+                
             }
-            
+            }
             System.out.println("----------------------------------------------------------------------------------------------------------------");
             
             System.out.println("Code\t\t\tCourse\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
@@ -136,11 +139,5 @@ public class PartBQuestion2 {
             }else{
                 System.out.println("Mark invalid.");
             }      
-    }
-    
-    void IDnumber(){
-        String idnum = JOptionPane.showInputDialog(null,"Student ID?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-        int id = Integer.parseInt(idnum);
-
     }
 }
