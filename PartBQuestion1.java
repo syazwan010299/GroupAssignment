@@ -101,7 +101,7 @@ public class PartBQuestion1 {
             System.out.println("Items Quantity : " + totalquantity);
             System.out.println("Membership : Yes");
             System.out.println("Membership Discount : 10%");
-            System.out.println("Total Purchased : "+ (float)totalprice);
+            System.out.println("Total Purchased : "+ totalprice);
             System.out.println("Rebates : " + totalrebate);
             totalgst = gst.count(totalprice);
             totaldiscounts = g.calc(totalgst);
@@ -110,7 +110,7 @@ public class PartBQuestion1 {
             memberdiscounts = (float)((0.9) * totalgst);
             System.out.println("------------------------------------------------------------------------------");  
             netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);
-            System.out.println("Net Purchased : " + netpurchased);
+            System.out.println("Net Purchased : " + (float)netpurchased);
                     
         }else if( (y == 'n') || (y == 'N')){
             System.out.println("d");
