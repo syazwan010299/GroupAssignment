@@ -109,7 +109,7 @@ public class PartBQuestion1 {
             
             memberdiscounts = (float)((0.9) * totalgst);
             System.out.println("------------------------------------------------------------------------------");  
-            netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);
+            netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);//check balik totaldiscount
             System.out.println("Net Purchased : " + (float)netpurchased);
                     
         }else if( (y == 'n') || (y == 'N')){
