@@ -92,6 +92,17 @@ public class PartBQuestion2 {
             System.out.println("Interaction Design          : ");
             System.out.println("\nBest Subject  : ");
             System.out.println("Worst Subject : ");
+            /*
+            first cuba create new variable contohnya mcm int savepointer;
+            then contoh code mcm ni
+            if.....
+                pointer = ...;
+                savepointer = pointer;
+            else if......
+                pointer = ....;
+                savepointer2 = pointer;
+            else if......
+            */
     }
     
     void Marks(int mark){
