@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 
 public class PartBQuestion1 {
     public static void main(String[] args) {
+
         Rebate rebate = new Rebate();
         GST gst = new GST();
         Discounts g = new Discounts();
@@ -101,7 +102,7 @@ public class PartBQuestion1 {
             System.out.println("Items Quantity : " + totalquantity);
             System.out.println("Membership : Yes");
             System.out.println("Membership Discount : 10%");
-            System.out.println("Total Purchased : "+ (float)totalprice);
+            System.out.println("Total Purchased : "+ String.format("%.2f",totalprice));
             System.out.println("Rebates : " + totalrebate);
             totalgst = gst.count(totalprice);
             totaldiscounts = g.calc(totalgst);
@@ -110,17 +111,17 @@ public class PartBQuestion1 {
             memberdiscounts = (float)((0.9) * totalgst);
             System.out.println("------------------------------------------------------------------------------");  
             netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);//check balik totaldiscount
-            System.out.println("Net Purchased : " + (float)netpurchased);
+            System.out.println("Net Purchased : " + String.format("%.2f",netpurchased));
            
             float amountpay = 0.0f;
             while ( amountpay < netpurchased){
             String pay = JOptionPane.showInputDialog(null,"You can pay now :)","Transaction System",JOptionPane.QUESTION_MESSAGE);
             amountpay = Integer.parseInt(pay); 
             }// end of the while
-            System.out.println("Amount Paid : " + amountpay);
+            System.out.println("Amount Paid : " + String.format("%.2f",amountpay));
             float change = 0.0f;
             change = ((-1)*(netpurchased - amountpay));
-            System.out.println("Changed : RM" + change);
+            System.out.println("Changed : RM" + String.format("%.2f",change));
                     
         }else if( (y == 'n') || (y == 'N')){
             System.out.println("d");
