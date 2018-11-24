@@ -111,6 +111,16 @@ public class PartBQuestion1 {
             System.out.println("------------------------------------------------------------------------------");  
             netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);//check balik totaldiscount
             System.out.println("Net Purchased : " + (float)netpurchased);
+           
+            float amountpay = 0.0f;
+            while ( amountpay < netpurchased){
+            String pay = JOptionPane.showInputDialog(null,"You can pay now :)","Transaction System",JOptionPane.QUESTION_MESSAGE);
+            amountpay = Integer.parseInt(pay); 
+            }// end of the while
+            System.out.println("Amount Paid : " + amountpay);
+            float change = 0.0f;
+            change = netpurchased - amountpay;
+            System.out.println("Changed : " + change);
                     
         }else if( (y == 'n') || (y == 'N')){
             System.out.println("d");
@@ -140,14 +150,14 @@ class Discounts{
         float s = (float)0.0;
         if ( (f > 200) && (f <= 500)){
             System.out.println("Discount : 10%");
-            s = (float) ((0.9) * f);
+            s = (float) ((0.1) * f);
         }else if( (f > 500) && (f <= 1000)){
             System.out.println("Discount : 20%");
-            s = (float) ((0.8) * f);
+            s = (float) ((0.2) * f);
             
         }else if ( (f > 1000) && (f <= 2000)){
             System.out.println("Discount : 30%");
-            s = (float) ((0.7) * f);
+            s = (float) ((0.3) * f);
             
         }else if ( f > 2000){
             System.out.println("Discount : 50%");
