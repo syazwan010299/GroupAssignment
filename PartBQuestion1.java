@@ -119,8 +119,8 @@ public class PartBQuestion1 {
             }// end of the while
             System.out.println("Amount Paid : " + amountpay);
             float change = 0.0f;
-            change = netpurchased - amountpay;
-            System.out.println("Changed : " + change);
+            change = ((-1)*(netpurchased - amountpay));
+            System.out.println("Changed : RM" + change);
                     
         }else if( (y == 'n') || (y == 'N')){
             System.out.println("d");
