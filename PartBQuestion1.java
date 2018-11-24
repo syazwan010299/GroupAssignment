@@ -24,6 +24,7 @@ public class PartBQuestion1 {
         char y = 'y';//To check the user has membership card or not
         int quantity1=0,quantity2=0,quantity3=0,quantity4=0,quantity5=0,quantity6=0,quantity7=0,quantity8=0;//variables for items that user want to buy
         float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;//variables for each of items times with how many for every item that user want
+        JOptionPane.showMessageDialog(null,"       WELCOME TO \n\tUNIMY SUPERMARKET","UNIMY SUPERMARKET",JOptionPane.INFORMATION_MESSAGE);//display the welcome to the unimy market
         String input = JOptionPane.showInputDialog(null,"Do You Have Membership Card?\nY-Yes    N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);//ask the user if he or she have membership card or not
         y = input.charAt(0);
         JOptionPane.showMessageDialog(null,"Code Item\n1 - Shoe   2 - Shirt\n3 - Pants   4 - Jeans\n5 - Fan   6 - Iron\n7 - Tray   8 - Rice","Transaction System",JOptionPane.INFORMATION_MESSAGE);//To show the user what is the code for every item
