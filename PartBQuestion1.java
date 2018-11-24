@@ -195,11 +195,10 @@ class Discounts{
         }else if ( (f > 1000) && (f <= 2000)){//if the total price more than 1000
             System.out.println("Discount : 30%");//display the 30% discount
             s = (float) ((0.3) * f);//calculate the 30% discount 
-        }else if ( f > 2000){
-            System.out.println("Discount : 50%");
-            s = (float) ((0.5) * f);
-           
-        }
-        return s;
-    }
-}
+        }else if ( f > 2000){//if the total price more than 2000
+            System.out.println("Discount : 50%");//display the 50% discount
+            s = (float) ((0.5) * f);//calculate the 50% discount 
+        }//end of the if else
+        return s;//return the value discount
+    }//end of the method
+}//end of the discounts class
