@@ -7,16 +7,16 @@
  */
 package GroupAssignment;
 
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;//import class JOptionPane to use the windows input and output
+import java.math.BigDecimal;//import class BigDecimal to convert float into 2 decimal places
 
 public class PartBQuestion1 {
     public static void main(String[] args) {
-
-        Rebate rebate = new Rebate();
-        GST gst = new GST();
-        Discounts g = new Discounts();
-        int discount = 0,discount1 = 0,discount2 = 0;
-        char y = 'y';
+        Rebate rebate = new Rebate();//create new class to calculate the rebate of the transaction
+        GST gst = new GST();//create new class to claculate the Government Service Tax
+        Discounts g = new Discounts();//create new class to calculate the discounts
+        int discount = 0,discount1 = 0,discount2 = 0;//variables for calculate the discounts
+        char y = 'y';//To check the user has membership card or not
         int quantity1=0,quantity2=0,quantity3=0,quantity4=0,quantity5=0,quantity6=0,quantity7=0,quantity8=0;
         float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;
         String input = JOptionPane.showInputDialog(null,"Do You Have Membership Card\nY-Yes \t N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);
@@ -81,8 +81,13 @@ public class PartBQuestion1 {
              quantity8 = Integer.parseInt(a8);
              total8 = (float)(quantity8 * 24.76);
              System.out.println("8\t\tRICE\t\tRM24.76\t\t"+quantity8+"\t\t\t"+"RM"+total8);      
-            }//end of the if else
-            
+            }else if ( id >= 9){
+                JOptionPane.showMessageDialog(null,"You key in wrong code !!","Error Message",JOptionPane.ERROR_MESSAGE);
+                product++;
+            }else if ( id == 0){
+                JOptionPane.showMessageDialog(null,"You key in wrong code !!","Error Message",JOptionPane.ERROR_MESSAGE);
+                product++;
+            }
             --product;
             }//end of the while
             System.out.println("------------------------------------------------------------------------------");
@@ -104,19 +109,24 @@ public class PartBQuestion1 {
             System.out.println("Membership Discount : 10%");
             System.out.println("Total Purchased : "+ String.format("%.2f",totalprice));
             System.out.println("Rebates : " + totalrebate);
+            totalprice = bundar(totalprice, 2);
             totalgst = gst.count(totalprice);
+            totalgst = bundar(totalgst, 2);
             totaldiscounts = g.calc(totalgst);
+            totaldiscounts = bundar(totaldiscounts, 2);
             System.out.println("GST(Goverment Service Tax) : 6%");
             
             memberdiscounts = (float)((0.9) * totalgst);
+            memberdiscounts = bundar(memberdiscounts, 2);
             System.out.println("------------------------------------------------------------------------------");  
             netpurchased = (float)( memberdiscounts - totalrebate - totaldiscounts);//check balik totaldiscount
+            netpurchased = bundar( netpurchased, 2);
             System.out.println("Net Purchased : " + String.format("%.2f",netpurchased));
            
             float amountpay = 0.0f;
             while ( amountpay < netpurchased){
             String pay = JOptionPane.showInputDialog(null,"You can pay now :)","Transaction System",JOptionPane.QUESTION_MESSAGE);
-            amountpay = Integer.parseInt(pay); 
+            amountpay = Float.parseFloat(pay); 
             }// end of the while
             System.out.println("Amount Paid : " + String.format("%.2f",amountpay));
             float change = 0.0f;
@@ -128,6 +138,14 @@ public class PartBQuestion1 {
         }//end of the else
         
     }//end of the main
+    
+    public static float bundar(float q , int c){
+        BigDecimal big = new BigDecimal(q);
+        big = big.setScale(c,BigDecimal.ROUND_HALF_UP);
+        return big.floatValue();
+    }
+    
+    
 }
 class Rebate{
     
