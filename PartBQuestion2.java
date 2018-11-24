@@ -28,20 +28,17 @@ public class PartBQuestion2 {
             String name = JOptionPane.showInputDialog(null,"Student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             System.out.print("NAME : "+name);
             
+            int id=0;
+            while ((id<999)){
+                String idnum = JOptionPane.showInputDialog(null,"Student ID?\nConsists of 4 digits","..",JOptionPane.QUESTION_MESSAGE);
+                id = Integer.parseInt(idnum);
             
-            String idnum = JOptionPane.showInputDialog(null,"Student ID?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-            int id = Integer.parseInt(idnum);
+                while((id>10000)){
+                    JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
+                    
+                }
+            }System.out.println("\t\t\tID : "+id);
             
-            while (id != 0){
-                //String idnum = JOptionPane.showInputDialog(null,"Student ID?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-                //id = Integer.parseInt(idnum);
-                
-            if ((id>=1000)&&(id>9999)){
-                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
-                System.out.println("\t\t ID NO : "+id);
-                
-            }
-            }
             System.out.println("----------------------------------------------------------------------------------------------------------------");
             
             System.out.println("Code\t\t\tCourse\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
@@ -49,7 +46,7 @@ public class PartBQuestion2 {
             int cmark1 = Integer.parseInt(course1);
             a.Marks(cmark1);
             System.out.println("BIS1513\t\tIntro to Information System\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+(3*pointer)+"" );
-            
+            if (idx<nostudent){i = pointer++;}
             
             String course2 = JOptionPane.showInputDialog(null,"C++ Programming I Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark2 = Integer.parseInt(course2);
@@ -88,8 +85,8 @@ public class PartBQuestion2 {
             System.out.println("Summary : ");
             System.out.println("Intro to Information Systems: "+(i/nostudent));
             System.out.println("C++ Programming I           : "+(c/nostudent));
-            System.out.println("Interactive Multimedia      : ");
-            System.out.println("Interaction Design          : ");
+            System.out.println("Interactive Multimedia      : "+(nostudent));
+            System.out.println("Interaction Design          : "+(nostudent));
             System.out.println("\nBest Subject  : ");
             System.out.println("Worst Subject : ");
             /*
