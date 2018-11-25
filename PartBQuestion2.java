@@ -44,7 +44,8 @@ public class PartBQuestion2 {
                  }
                 
                 
-            }System.out.println("\t\t\tID : "+id);
+            }//end of the while
+            System.out.println("\t\t\tID : "+id);
             
             System.out.println("----------------------------------------------------------------------------------------------------------------");
             
