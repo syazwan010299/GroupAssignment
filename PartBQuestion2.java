@@ -30,8 +30,28 @@ public class PartBQuestion2 {
             String name = JOptionPane.showInputDialog(null,"Student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             System.out.print("  NAME : "+name);
             
-            int id=0;
+            int id = 0;
+            int counter = 0;
+            int length = 0;
+            while ( length == 0){// act as counter to loop the process
+            String plus = JOptionPane.showInputDialog(null,"Student Id","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            counter = Integer.parseInt(plus);
+            id = counter;
+            //to calculate the total of digit in the number
+            while( counter != 0){
+                counter /= 10;
+                ++length;
+            }//end of the while
+            if ( length >= 5){//if the total of digit is more than 4
+                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
+                length -= length;//reset the value of counter length as 0
+            }else if ( length <= 3){//if the total of digit is less than 4
+                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
+                length -= length;;//reset the value of counter length as 0
+            }//end of the if else
             
+            }//end of the while
+            /*
             while ((id<999)){
                 String idnum = JOptionPane.showInputDialog(null,"Student ID?\nConsists of 4 digits","Exam Result System",JOptionPane.QUESTION_MESSAGE);
                 id = Integer.parseInt(idnum);
@@ -45,7 +65,7 @@ public class PartBQuestion2 {
                  }
                 
                 
-            }//end of the while
+            }//end of the while*/
             System.out.println("\t\t\tID : "+id);
             
         System.out.println("----------------------------------------------------------------------------------------------------------------");
