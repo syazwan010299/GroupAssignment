@@ -17,12 +17,14 @@ public class PartBQuestion2 {
     
     
     public static void main(String[] args) {
+        System.out.println("----------------------------------------| WELCOME TO EXAM RESULT SYSTEM |----------------------------------------");
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
-        System.out.println("Number of students : "+num+"\n");
+        System.out.println("\nNumber of students : "+num+"\n");
         int nostudent = Integer.parseInt(num);
         int idx;
         float i = 0.0f,c=0.0f,m=0.0f,t=0.0f,d=0.0f;
         PartBQuestion2 a = new PartBQuestion2();
+        String subject1,subject2,subject3,subject4,subject5;
         
         for (idx=0;idx<nostudent;idx++){
             System.out.println("----------------------------------------------------------------------------------------------------------------");
@@ -51,26 +53,12 @@ public class PartBQuestion2 {
             }//end of the if else
             
             }//end of the while
-            /*
-            while ((id<999)){
-                String idnum = JOptionPane.showInputDialog(null,"Student ID?\nConsists of 4 digits","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-                id = Integer.parseInt(idnum);
             
-                //if((id>10000)){
-                //    JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
-                    
-                //}
-                 if((id==id)){
-                    JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
-                 }
-                
-                
-            }//end of the while*/
             System.out.println("\t\t\tID : "+id);
             
         System.out.println("----------------------------------------------------------------------------------------------------------------");
             
-            System.out.println("  Code\t\t\tCourse\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
+            System.out.println("  Code\t\t\tCourse\t\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
             String course1 = JOptionPane.showInputDialog(null,"Intro to Information Systems Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark1 = Integer.parseInt(course1);
             a.Marks(cmark1);
@@ -131,19 +119,39 @@ public class PartBQuestion2 {
             System.out.println("  Interactive Multimedia      : "+(m/nostudent));
             System.out.println("  Multimedia Technology       : "+(t/nostudent));
             System.out.println("  Interaction Design          : "+(d/nostudent));
-            System.out.println("\n  Best Subject  : ");
-            System.out.println("  Worst Subject : ");
-            /*
-            first cuba create new variable contohnya mcm int savepointer;
-            then contoh code mcm ni
-            if.....
-                pointer = ...;
-                savepointer = pointer;
-            else if......
-                pointer = ....;
-                savepointer2 = pointer;
-            else if......
-            */
+            
+            float total1,total2, total3, total4, total5;
+            total1 = (i/nostudent);
+            total2 = (c/nostudent);
+            total3 = (m/nostudent);
+            total4 = (t/nostudent);
+            total5 = (d/nostudent);
+            
+            if ((total1>total2)&&(total1>total3)&&(total1>total4)&&(total1>total5)){
+                System.out.println("\n  Best Subject  : Intro to Information Systems");
+            }else if((total2>total1)&&(total2>total3)&&(total2>total4)&&(total2>total5)){
+                System.out.println("\n  Best Subject  : C++ Programming");
+            }else if((total3>total1)&&(total3>total2)&&(total3>total4)&&(total3>total5)){
+                System.out.println("\n  Best Subject  : Interactive Multimedia");
+            }else if((total4>total1)&&(total4>total2)&&(total4>total3)&&(total4>total5)){
+                System.out.println("\n  Best Subject  : Multimedia Technology");
+            }else if((total5>total1)&&(total5>total2)&&(total5>total3)&&(total5>total4)){
+                System.out.println("\n  Best Subject  : Interaction Design");
+            }
+            
+            
+            if ((total1<total2)&&(total1<total3)&&(total1<total4)&&(total1<total5)){
+                System.out.println("  Worst Subject  : Intro to Information Systems");
+            }else if((total2<total1)&&(total2<total3)&&(total2<total4)&&(total2<total5)){
+                System.out.println("  Worst Subject  : C++ Programming");
+            }else if((total3<total1)&&(total3<total2)&&(total3<total4)&&(total3<total5)){
+                System.out.println("  Worst Subject  : Interactive Multimedia");
+            }else if((total4<total1)&&(total4<total2)&&(total4<total3)&&(total4<total5)){
+                System.out.println("  Worst Subject  : Multimedia Technology");
+            }else if((total5<total1)&&(total5<total2)&&(total5<total3)&&(total5<total4)){
+                System.out.println("  Worst Subject  : Interaction Design");
+            }
+            
     }
     
     void Marks(int mark){
