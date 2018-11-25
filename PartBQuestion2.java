@@ -101,7 +101,7 @@ public class PartBQuestion2 {
             float savepoint4 = (2*pointer);
             savepoint4 = bundar(savepoint4,2);
             System.out.println("  BIT1312\t\tMultimedia Technology\t\t\t  2\t "+cmark4+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint4);
-            t += mark5;
+            t += cmark4;
             
             String course5 = JOptionPane.showInputDialog(null,"Interaction Design Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark5 = Integer.parseInt(course5);
