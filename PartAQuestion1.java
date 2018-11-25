@@ -6,24 +6,20 @@
  * @version 1.AI
  */
 package GroupAssignment;
-
 import java.lang.Math;//import Math Class
 import javax.swing.JOptionPane;//import windows
-
 public class PartAQuestion1 {
     public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null,"Welcome To The Lottery :)\n     Good Luck","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
         char a = 'y';//variable to loop the process until user do not want to play anymore
         while ( a == 'y'){//if the user key in y 
         String input = JOptionPane.showInputDialog(null,"Enter your 3-digit lottery number : ","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to key in 3 number
         int user = Integer.parseInt(input);// Take 3 numbers from user
         Lot lot = new Lot();
         int lottery = lot.kira();
-    
-       
         int replace = user;// copy the user input into replace variable
         int temp1,temp2,temp3;//to save the first, second and third digit of the user input
         int random1,random2,random3;//to save the first, second and third digit of the random numbers
-        
         // To check the number of digits in the user input
         int number = 0;// variables for counter to calculate the number of digits in the user input
         while ( user != 0){
@@ -37,23 +33,19 @@ public class PartAQuestion1 {
             temp3 = lot.split(replace);//use the split method to get the third digit of the user input
             replace = lot.delete(replace);//use the delete method to remove the third digit of the user input
             temp2 = lot.split(replace);//use the split method to get the second digit of the user input
-            replace = lot.delete(replace);//use the delete methodto remove the second digit of the user input
+            replace = lot.delete(replace);//use the delete method to remove the second digit of the user input
             temp1 = lot.split(replace);//use the split method to get the first digit of the user input
-            
-            System.out.print(temp1+ " | ");
-            System.out.print(temp2+ " | ");
-            System.out.println(temp3);
-            
+            //System.out.print(temp1+ " | ");
+            //System.out.print(temp2+ " | ");
+            //System.out.println(temp3);
             random3 = lot.split(lottery);//use the split method to get the third digit of the random number
             lottery = lot.delete(lottery);//use delete method to remove the third digit of the random numbers
             random2 = lot.split(lottery);//use the split method to get the second digit of the random number
             lottery = lot.delete(lottery);//use delete method to remove the second digit of the random numbers
             random1 = lot.split(lottery);//use the split method to get the first digit of the random number
-            
-            System.out.print(random1+ " | ");
-            System.out.print(random2+ " | ");
-            System.out.println(random3);
-            
+            //System.out.print(random1+ " | ");
+            //System.out.print(random2+ " | ");
+            //System.out.println(random3);
             //To check the condition to give the reward to the user
             if ((random1==temp1)&&(random2==temp2)&&(random3==temp3)){//if the user input matches the lottery in exact order,the awrd is RM5000
                 JOptionPane.showMessageDialog(null,"CONGRATULATION!!\n You have won RM 5000","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
@@ -68,16 +60,14 @@ public class PartAQuestion1 {
         String check = JOptionPane.showInputDialog(null,"Do you want to try again?\n y-YES \t n-NO","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to repeat or not 
         a = check.charAt(0);
         }//end of the while
-       
        }//end of the main 
 }//end of the class
-
     class Lot{//new class specialise for to split the numbers
        int lottery = 0;
        int c = 0;
        public int kira(){//method to calculate the random numbers
         lottery += (Math.random()*1000);//To calculate random lottery number  
-        System.out.println("The random number is : " + lottery);  
+        //System.out.println("The random number is : " + lottery);  
         return lottery;//return the lottery value to the main class
        }
        public int split(int d){//to get single digit of the number
