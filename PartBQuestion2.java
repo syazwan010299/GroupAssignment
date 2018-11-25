@@ -14,6 +14,7 @@ public class PartBQuestion2 {
     static char grad, symbol;
     static double pointer;
     
+    
     public static void main(String[] args) {
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
         System.out.println("Number of students : "+num);
@@ -29,11 +30,16 @@ public class PartBQuestion2 {
             System.out.print("NAME : "+name);
             
             int id=0;
-            while ((id<999)){
-                String idnum = JOptionPane.showInputDialog(null,"Student ID?\nConsists of 4 digits","..",JOptionPane.QUESTION_MESSAGE);
+            
+            while ((id>1000)){
+                String idnum = JOptionPane.showInputDialog(null,"Student ID?\nConsists of 4 digits","Exam Result System",JOptionPane.QUESTION_MESSAGE);
                 id = Integer.parseInt(idnum);
             
-                while((id>10000)){
+                //if((id>10000)){
+                //    JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
+                    
+                //}
+                if((id==id)){
                     JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
                     
                 }
@@ -46,7 +52,7 @@ public class PartBQuestion2 {
             int cmark1 = Integer.parseInt(course1);
             a.Marks(cmark1);
             System.out.println("BIS1513\t\tIntro to Information System\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+(3*pointer)+"" );
-            if (idx<nostudent){i = pointer++;}
+            
             
             String course2 = JOptionPane.showInputDialog(null,"C++ Programming I Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark2 = Integer.parseInt(course2);
@@ -85,8 +91,8 @@ public class PartBQuestion2 {
             System.out.println("Summary : ");
             System.out.println("Intro to Information Systems: "+(i/nostudent));
             System.out.println("C++ Programming I           : "+(c/nostudent));
-            System.out.println("Interactive Multimedia      : "+(nostudent));
-            System.out.println("Interaction Design          : "+(nostudent));
+            System.out.println("Interactive Multimedia      : "+(m/nostudent));
+            System.out.println("Interaction Design          : "+(d/nostudent));
             System.out.println("\nBest Subject  : ");
             System.out.println("Worst Subject : ");
             /*
@@ -103,8 +109,8 @@ public class PartBQuestion2 {
     }
     
     void Marks(int mark){
-        
-            if ((mark>=80)&&(mark<101)){
+
+            if ((mark>=80)&&(mark<=100)){
                 grad = 'A';
                 symbol = ' ';
                 pointer = 4.00;
@@ -146,6 +152,7 @@ public class PartBQuestion2 {
                 pointer = 0.00;
             }else{
                 System.out.println("Mark invalid.");
-            }      
+            }     
+        
     }
 }
