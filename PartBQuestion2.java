@@ -77,7 +77,7 @@ public class PartBQuestion2 {
             float savepoint1 = (3*pointer);
             savepoint1 = bundar(savepoint1,2);
             System.out.println("  BIS1513\t\tIntro to Information System\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint1);
-            i = cmark1++;
+            i += cmark1;
             
             String course2 = JOptionPane.showInputDialog(null,"C++ Programming I Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark2 = Integer.parseInt(course2);
@@ -85,7 +85,7 @@ public class PartBQuestion2 {
             float savepoint2 = (4*pointer);
             savepoint2 = bundar(savepoint2,2);
             System.out.println("  BIT1214\t\tC++ Programming I\t\t\t  4\t "+cmark2+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint2 );
-            c = cmark2++;
+            c += cmark2;
             
             String course3 = JOptionPane.showInputDialog(null,"Interactive Multimedia Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark3 = Integer.parseInt(course3);
@@ -93,7 +93,7 @@ public class PartBQuestion2 {
             float savepoint3 = (3*pointer);
             savepoint3 = bundar(savepoint3,2);
             System.out.println("  BIT2333\t\tInteractive Multimedia\t\t\t  3\t "+cmark3+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint3);
-            m = cmark3++;
+            m += cmark3;
             
             String course4 = JOptionPane.showInputDialog(null,"Multimedia Technology Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark4 = Integer.parseInt(course4);
@@ -101,7 +101,7 @@ public class PartBQuestion2 {
             float savepoint4 = (2*pointer);
             savepoint4 = bundar(savepoint4,2);
             System.out.println("  BIT1312\t\tMultimedia Technology\t\t\t  2\t "+cmark4+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint4);
-            
+            t += mark5;
             
             String course5 = JOptionPane.showInputDialog(null,"Interaction Design Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark5 = Integer.parseInt(course5);
@@ -109,7 +109,7 @@ public class PartBQuestion2 {
             float savepoint5 = (3*pointer);
             savepoint5 = bundar(savepoint5,2);
             System.out.println("  BIE2243\t\tInteraction Design\t\t\t  3\t "+cmark5+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint5);
-            d = cmark5++;
+            d += cmark5;
             
         System.out.println("----------------------------------------------------------------------------------------------------------------");
             float gpa = (savepoint1+savepoint2+savepoint3+savepoint4+savepoint5);
@@ -129,6 +129,7 @@ public class PartBQuestion2 {
             System.out.println("  Intro to Information Systems: "+(i/nostudent));
             System.out.println("  C++ Programming I           : "+(c/nostudent));
             System.out.println("  Interactive Multimedia      : "+(m/nostudent));
+            System.out.println("  Multimedia Technology       : "+(t/nostudent));
             System.out.println("  Interaction Design          : "+(d/nostudent));
             System.out.println("\n  Best Subject  : ");
             System.out.println("  Worst Subject : ");
