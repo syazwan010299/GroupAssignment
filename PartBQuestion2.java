@@ -62,8 +62,20 @@ public class PartBQuestion2 {
         System.out.println("----------------------------------------------------------------------------------------------------------------");
             
             System.out.println("  Code\t\t\tCourse\t\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
+            int count = 0;
+            int cmark1 = 0;
+            while (count == 0){
             String course1 = JOptionPane.showInputDialog(null,"Intro to Information Systems Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for first subject's mark
-            int cmark1 = Integer.parseInt(course1);//convert into mark into integer
+            cmark1 = Integer.parseInt(course1);//convert into mark into integer
+            count = cmark1;
+            if(cmark1 < 0){
+                JOptionPane.showMessageDialog(null,"Invalid Marks","Exam Result System",JOptionPane.ERROR_MESSAGE);
+                count-=count;
+            }else if (cmark1>100){
+                JOptionPane.showMessageDialog(null,"Invalid Marks","Exam Result System",JOptionPane.ERROR_MESSAGE);
+                count-=count;
+                }//end of the if else
+            }//end of the while
             obj.Marks(cmark1);//send to Marks method to identify grade and points
             float savepoint1 = (3*pointer);//to calculate the grade point
             savepoint1 = Bundarkan(savepoint1,2);
@@ -210,9 +222,8 @@ public class PartBQuestion2 {
                 grad = 'F';//determiine the grade
                 symbol = ' ';
                 pointer = 0.00f;//determine the pointer
-            }else{
-                System.out.println("Mark invalid.");
-            }     
+            }
+                
         
     }//end of method Marks
     
