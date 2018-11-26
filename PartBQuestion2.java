@@ -23,25 +23,24 @@ public class PartBQuestion2 {
         LocalDateTime now = LocalDateTime.now();
         System.out.println("----------------------------------------| WELCOME TO EXAM RESULT SYSTEM |----------------------------------------");
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
-        System.out.println(date.format(now));
         System.out.println("\nNumber of students : "+num+"\n");
+        System.out.println(date.format(now));
         int nostudent = Integer.parseInt(num);
         int idx;
-        float i = 0.0f,c=0.0f,m=0.0f,t=0.0f,d=0.0f;
+        float i = 0.0f, c=0.0f, m=0.0f, t=0.0f, d=0.0f;
         PartBQuestion2 a = new PartBQuestion2();
-        String subject1,subject2,subject3,subject4,subject5;
         
         for (idx=0;idx<nostudent;idx++){
             System.out.println("----------------------------------------------------------------------------------------------------------------");
             
-            String name = JOptionPane.showInputDialog(null,"Student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            String name = JOptionPane.showInputDialog(null,(idx+1)+" Student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             System.out.print("  NAME : "+name);
             
             int id = 0;
             int counter = 0;
             int length = 0;
             while ( length == 0){// act as counter to loop the process
-            String plus = JOptionPane.showInputDialog(null,"Student Id","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             counter = Integer.parseInt(plus);
             id = counter;
             //to calculate the total of digit in the number
@@ -68,7 +67,7 @@ public class PartBQuestion2 {
             int cmark1 = Integer.parseInt(course1);
             a.Marks(cmark1);
             float savepoint1 = (3*pointer);
-            savepoint1 = bundar(savepoint1,2);
+            savepoint1 = Bundarkan(savepoint1,2);
             System.out.println("  BIS1513\t\tIntro to Information System\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint1);
             i += cmark1;
             
@@ -76,7 +75,7 @@ public class PartBQuestion2 {
             int cmark2 = Integer.parseInt(course2);
             a.Marks(cmark2);
             float savepoint2 = (4*pointer);
-            savepoint2 = bundar(savepoint2,2);
+            savepoint2 = Bundarkan(savepoint2,2);
             System.out.println("  BIT1214\t\tC++ Programming I\t\t\t  4\t "+cmark2+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint2 );
             c += cmark2;
             
@@ -84,7 +83,7 @@ public class PartBQuestion2 {
             int cmark3 = Integer.parseInt(course3);
             a.Marks(cmark3);
             float savepoint3 = (3*pointer);
-            savepoint3 = bundar(savepoint3,2);
+            savepoint3 = Bundarkan(savepoint3,2);
             System.out.println("  BIT2333\t\tInteractive Multimedia\t\t\t  3\t "+cmark3+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint3);
             m += cmark3;
             
@@ -92,7 +91,7 @@ public class PartBQuestion2 {
             int cmark4 = Integer.parseInt(course4);
             a.Marks(cmark4);
             float savepoint4 = (2*pointer);
-            savepoint4 = bundar(savepoint4,2);
+            savepoint4 = Bundarkan(savepoint4,2);
             System.out.println("  BIT1312\t\tMultimedia Technology\t\t\t  2\t "+cmark4+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint4);
             t += cmark4;
             
@@ -100,61 +99,69 @@ public class PartBQuestion2 {
             int cmark5 = Integer.parseInt(course5);
             a.Marks(cmark5);
             float savepoint5 = (3*pointer);
-            savepoint5 = bundar(savepoint5,2);
+            savepoint5 = Bundarkan(savepoint5,2);
             System.out.println("  BIE2243\t\tInteraction Design\t\t\t  3\t "+cmark5+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint5);
             d += cmark5;
             
         System.out.println("----------------------------------------------------------------------------------------------------------------");
             float gpa = (savepoint1+savepoint2+savepoint3+savepoint4+savepoint5);
-            gpa = bundar(gpa,2);
+            gpa = Bundarkan(gpa,2);
             float cgpa = (gpa/15);
-            cgpa = bundar(cgpa,2);
-            System.out.println("  Your GPA : "+(cgpa));
+            cgpa = Bundarkan(cgpa,2);
+            System.out.println("  Your GPA : "+cgpa);
             if (cgpa>2.00){
             System.out.println("  Status : PASS");
             }else{
-                System.out.println("  Status : FAIL");
+                System.out.println("  Status : FAIL\n");
             }
             }
         System.out.println("----------------------------------------------------------------------------------------------------------------");
         
             System.out.println("  Summary : ");
-            System.out.println("  Intro to Information Systems: "+(i/nostudent));
-            System.out.println("  C++ Programming I           : "+(c/nostudent));
-            System.out.println("  Interactive Multimedia      : "+(m/nostudent));
-            System.out.println("  Multimedia Technology       : "+(t/nostudent));
-            System.out.println("  Interaction Design          : "+(d/nostudent));
-            
             float total1,total2, total3, total4, total5;
             total1 = (i/nostudent);
+            total1 = Bundarkan(total1,2);
             total2 = (c/nostudent);
+            total2 = Bundarkan(total2,2);
             total3 = (m/nostudent);
+            total3 = Bundarkan(total3,2);
             total4 = (t/nostudent);
+            total4 = Bundarkan(total4,2);
             total5 = (d/nostudent);
+            total5 = Bundarkan(total5,2);
+            System.out.println("  Intro to Information Systems: "+total1);
+            System.out.println("  C++ Programming I           : "+total2);
+            System.out.println("  Interactive Multimedia      : "+total3);
+            System.out.println("  Multimedia Technology       : "+total4);
+            System.out.println("  Interaction Design          : "+total5);
             
             if ((total1>total2)&&(total1>total3)&&(total1>total4)&&(total1>total5)){
                 System.out.println("\n  Best Subject  : Intro to Information Systems");
             }else if((total2>total1)&&(total2>total3)&&(total2>total4)&&(total2>total5)){
-                System.out.println("\n  Best Subject  : C++ Programming");
+                System.out.println("\n  Best Subject  : C++ Programming I");
             }else if((total3>total1)&&(total3>total2)&&(total3>total4)&&(total3>total5)){
                 System.out.println("\n  Best Subject  : Interactive Multimedia");
             }else if((total4>total1)&&(total4>total2)&&(total4>total3)&&(total4>total5)){
                 System.out.println("\n  Best Subject  : Multimedia Technology");
             }else if((total5>total1)&&(total5>total2)&&(total5>total3)&&(total5>total4)){
                 System.out.println("\n  Best Subject  : Interaction Design");
+            }else{
+                System.out.println("\n  No Best Subject");
             }
             
             
             if ((total1<total2)&&(total1<total3)&&(total1<total4)&&(total1<total5)){
                 System.out.println("  Worst Subject  : Intro to Information Systems");
             }else if((total2<total1)&&(total2<total3)&&(total2<total4)&&(total2<total5)){
-                System.out.println("  Worst Subject  : C++ Programming");
+                System.out.println("  Worst Subject  : C++ Programming I");
             }else if((total3<total1)&&(total3<total2)&&(total3<total4)&&(total3<total5)){
                 System.out.println("  Worst Subject  : Interactive Multimedia");
             }else if((total4<total1)&&(total4<total2)&&(total4<total3)&&(total4<total5)){
                 System.out.println("  Worst Subject  : Multimedia Technology");
             }else if((total5<total1)&&(total5<total2)&&(total5<total3)&&(total5<total4)){
                 System.out.println("  Worst Subject  : Interaction Design");
+            }else{
+                System.out.println("\n  No Worst Subject");
             }
             
     }
@@ -207,7 +214,7 @@ public class PartBQuestion2 {
         
     }
     
-        public static float bundar(float q , int c){
+    public static float Bundarkan(float q , int c){
         BigDecimal b = new BigDecimal(q);//declaration of new object
         b = b.setScale(c,BigDecimal.ROUND_HALF_UP);
         return b.floatValue();//return the value that has two decimal places
