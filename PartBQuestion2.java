@@ -1,24 +1,29 @@
 /**
- * Program Name : Part B Question 2
- * Description  : 
+ * Program Name : Exam Result System - Part B Question 2
+ * Description  : This coding 
  * @author      : Mohamad Syazwan Zulfaris bin Zainal - B04180021
  *              : Nor Fariha binti Serzali - B04180022
  * @version 2.BI
  */
 package GroupAssignment;
 
-import java.math.BigDecimal;
-import javax.swing.JOptionPane;
+import java.math.BigDecimal;//import class BigDecimal to convert float in 2 decimal points
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;//import windows
 
 public class PartBQuestion2 {
-    static int mark;
+    private static final DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    static int mark;//
     static char grad, symbol;
     static float pointer;
     
     
     public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
         System.out.println("----------------------------------------| WELCOME TO EXAM RESULT SYSTEM |----------------------------------------");
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
+        System.out.println(date.format(now));
         System.out.println("\nNumber of students : "+num+"\n");
         int nostudent = Integer.parseInt(num);
         int idx;

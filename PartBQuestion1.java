@@ -1,5 +1,5 @@
 /**
- * Program Name : Part B Question 1
+ * Program Name : Transaction System - Part B Question 1
  * Description  : 
  * @author      : Mohamad Syazwan Zulfaris bin Zainal - B04180021
  *              : Nor Fariha binti Serzali - B04180022
