@@ -77,4 +77,4 @@ class Lot{//new class specialise for to split the numbers
         d /= 10;
         return d;
     }
-}
+}//end of Lot class
