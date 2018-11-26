@@ -28,7 +28,7 @@ public class PartBQuestion2 {
         int nostudent = Integer.parseInt(num);
         int idx;
         float i = 0.0f, c=0.0f, m=0.0f, t=0.0f, d=0.0f;
-        PartBQuestion2 a = new PartBQuestion2();
+        PartBQuestion2 obj = new PartBQuestion2();
         
         for (idx=0;idx<nostudent;idx++){
             System.out.println("----------------------------------------------------------------------------------------------------------------");
@@ -40,7 +40,7 @@ public class PartBQuestion2 {
             int counter = 0;
             int length = 0;
             while ( length == 0){// act as counter to loop the process
-            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id Number\nConsists of 4 values","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id Number\nConsists3 of 4 values","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             counter = Integer.parseInt(plus);
             id = counter;
             //to calculate the total of digit in the number
@@ -53,7 +53,7 @@ public class PartBQuestion2 {
                 length -= length;//reset the value of counter length as 0
             }else if ( length <= 3){//if the total of digit is less than 4
                 JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
-                length -= length;;//reset the value of counter length as 0
+                length -= length;//reset the value of counter length as 0
             }//end of the if else
             
             }//end of the while
@@ -65,7 +65,7 @@ public class PartBQuestion2 {
             System.out.println("  Code\t\t\tCourse\t\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
             String course1 = JOptionPane.showInputDialog(null,"Intro to Information Systems Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark1 = Integer.parseInt(course1);
-            a.Marks(cmark1);
+            obj.Marks(cmark1);
             float savepoint1 = (3*pointer);
             savepoint1 = Bundarkan(savepoint1,2);
             System.out.println("  BIS1513\t\tIntro to Information System\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint1);
@@ -73,7 +73,7 @@ public class PartBQuestion2 {
             
             String course2 = JOptionPane.showInputDialog(null,"C++ Programming I Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark2 = Integer.parseInt(course2);
-            a.Marks(cmark2);
+            obj.Marks(cmark2);
             float savepoint2 = (4*pointer);
             savepoint2 = Bundarkan(savepoint2,2);
             System.out.println("  BIT1214\t\tC++ Programming I\t\t\t  4\t "+cmark2+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint2 );
@@ -81,7 +81,7 @@ public class PartBQuestion2 {
             
             String course3 = JOptionPane.showInputDialog(null,"Interactive Multimedia Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark3 = Integer.parseInt(course3);
-            a.Marks(cmark3);
+            obj.Marks(cmark3);
             float savepoint3 = (3*pointer);
             savepoint3 = Bundarkan(savepoint3,2);
             System.out.println("  BIT2333\t\tInteractive Multimedia\t\t\t  3\t "+cmark3+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint3);
@@ -89,7 +89,7 @@ public class PartBQuestion2 {
             
             String course4 = JOptionPane.showInputDialog(null,"Multimedia Technology Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark4 = Integer.parseInt(course4);
-            a.Marks(cmark4);
+            obj.Marks(cmark4);
             float savepoint4 = (2*pointer);
             savepoint4 = Bundarkan(savepoint4,2);
             System.out.println("  BIT1312\t\tMultimedia Technology\t\t\t  2\t "+cmark4+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint4);
@@ -97,7 +97,7 @@ public class PartBQuestion2 {
             
             String course5 = JOptionPane.showInputDialog(null,"Interaction Design Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             int cmark5 = Integer.parseInt(course5);
-            a.Marks(cmark5);
+            obj.Marks(cmark5);
             float savepoint5 = (3*pointer);
             savepoint5 = Bundarkan(savepoint5,2);
             System.out.println("  BIE2243\t\tInteraction Design\t\t\t  3\t "+cmark5+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint5);
