@@ -34,13 +34,13 @@ public class PartBQuestion2 {
             System.out.println("----------------------------------------------------------------------------------------------------------------");
             
             String name = JOptionPane.showInputDialog(null,(idx+1)+" Student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-            System.out.print("  NAME : "+name);
+            System.out.print("\n  NAME : "+name);
             
             int id = 0;
             int counter = 0;
             int length = 0;
             while ( length == 0){// act as counter to loop the process
-            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id Number\nConsists3 of 4 values","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id Number\nConsists of 4 values","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             counter = Integer.parseInt(plus);
             id = counter;
             //to calculate the total of digit in the number
@@ -112,12 +112,12 @@ public class PartBQuestion2 {
             if (cgpa>2.00){
             System.out.println("  Status : PASS");
             }else{
-                System.out.println("  Status : FAIL\n");
+                System.out.println("  Status : FAIL");
             }
             }
         System.out.println("----------------------------------------------------------------------------------------------------------------");
         
-            System.out.println("  Summary : ");
+            System.out.println("\n  Summary : ");
             float total1,total2, total3, total4, total5;
             total1 = (i/nostudent);
             total1 = Bundarkan(total1,2);
@@ -163,7 +163,7 @@ public class PartBQuestion2 {
             }else{
                 System.out.println("\n  No Worst Subject");
             }
-            
+            System.out.println("----------------------------------------------------------------------------------------------------------------");
     }
     
     void Marks(int mark){
