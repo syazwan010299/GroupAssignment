@@ -18,14 +18,14 @@ public class PartBQuestion1 {
     public static void main(String[] args) {
         LocalDateTime now = LocalDateTime.now();//create new object to calculate the time and date 
         Rebate rebate = new Rebate();//create new object to calculate the rebate of the transaction
-        GST gst = new GST();//create new object to claculate the Government Service Tax
+        GST gst = new GST();//create new object to calculate the Government Service Tax
         Discounts g = new Discounts();//create new object to calculate the discounts
         int discount = 0,discount1 = 0,discount2 = 0;//variables for calculate the discounts
         char y = 'y';//To check the user has membership card or not
-        int quantity1=0,quantity2=0,quantity3=0,quantity4=0,quantity5=0,quantity6=0,quantity7=0,quantity8=0;//variables for items that user want to buy
-        float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;//variables for each of items times with how many for every item that user want
-        JOptionPane.showMessageDialog(null,"       WELCOME TO \n\tUNIMY SUPERMARKET","UNIMY SUPERMARKET",JOptionPane.INFORMATION_MESSAGE);//display the welcome to the unimy market
-        String input = JOptionPane.showInputDialog(null,"Do You Have Membership Card?\nY-Yes    N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);//ask the user if he or she have membership card or not
+        int quantity1=0, quantity2=0, quantity3=0, quantity4=0, quantity5=0, quantity6=0, quantity7=0, quantity8=0;//variables for items that user want to buy
+        float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;//variables for each item multiple with how many purchase of every item
+        JOptionPane.showMessageDialog(null,"       WELCOME TO \n\tUNIMY SUPERMARKET","UNIMY SUPERMARKET",JOptionPane.INFORMATION_MESSAGE);//display the welcome to the unimy market window
+        String input = JOptionPane.showInputDialog(null,"Do you have UNIMY membership card?\nY-Yes    N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);//ask the user if they have membership card or not
         y = input.charAt(0);
         JOptionPane.showMessageDialog(null,"Code Item\n1 - Shoe   2 - Shirt\n3 - Pants   4 - Jeans\n5 - Fan   6 - Iron\n7 - Tray   8 - Rice","Transaction System",JOptionPane.INFORMATION_MESSAGE);//To show the user what is the code for every item
         if ( (y == 'y') || (y == 'Y')){
@@ -34,7 +34,7 @@ public class PartBQuestion1 {
             System.out.println("Code\t\tName\t\tPrice\t\tQuantity\t\tTotal");
             System.out.println("------------------------------------------------------------------------------");
             
-            String purchase = JOptionPane.showInputDialog(null,"How many products that you want to purchase?","Transaction System",JOptionPane.QUESTION_MESSAGE);//ask the user how many products that user want to purchase
+            String purchase = JOptionPane.showInputDialog(null,"How many products you want to purchase?","Transaction System",JOptionPane.QUESTION_MESSAGE);//ask the user how many products that user want to purchase
             int product = Integer.parseInt(purchase);
             //Loop as long the product is not 0
             while ( product != 0){
