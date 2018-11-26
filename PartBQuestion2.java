@@ -20,10 +20,11 @@ public class PartBQuestion2 {
     static float pointer;//declare pointer of the grade
     
     public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null,"WELCOME TO EXAM RESULT SYSTEM :)","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
         LocalDateTime now = LocalDateTime.now();//create new object to calculate the time and date
         System.out.println("----------------------------------------| WELCOME TO EXAM RESULT SYSTEM |----------------------------------------");
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);//ask how many student in the class
-        System.out.println("\nNumber of students : "+num+"\n");//show the amount of students in the class
+        System.out.println("\nNumber of students in the class : "+num+"\n");//show the amount of students in the class
         System.out.println(date.format(now));//show the date and time
         int nostudent = Integer.parseInt(num);//declare int for number of students
         int idx;
@@ -33,84 +34,112 @@ public class PartBQuestion2 {
         for (idx=0;idx<nostudent;idx++){//for loop to ask input according number of students
             System.out.println("----------------------------------------------------------------------------------------------------------------");
             
-            String name = JOptionPane.showInputDialog(null,(idx+1)+" Student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for student name
+            String name = JOptionPane.showInputDialog(null,(idx+1)+" student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for student name
             System.out.print("\n  NAME : "+name);//show the student name
             
             int id = 0;
             int length = 0;
             while ( length == 0){// act as counter to loop the process
-            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student ID Number\nConsists of 4 values","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for student ID number
+            String plus = JOptionPane.showInputDialog(null,(idx+1)+" student ID number\nConsists of 4 digit values","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for student ID number
             int counter = Integer.parseInt(plus);//declare the ID key in by user
             id = counter;
-            //to calculate the total of digit in the number
+            //to calculate the digit value in the number
             while( counter != 0){
                 counter /= 10;
                 ++length;
             }//end of the while
             if ( length >= 5){//if the total of digit is more than 4
-                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values only","Exam Result System",JOptionPane.ERROR_MESSAGE);//error message for ID number
                 length -= length;//reset the value of counter length as 0
             }else if ( length <= 3){//if the total of digit is less than 4
-                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values","Exam Result Systems",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"PLEASE ENTER A VALID ID NUMBER.\nStudent ID must contain 4 digit values only","Exam Result System",JOptionPane.ERROR_MESSAGE);//error message for ID number
                 length -= length;//reset the value of counter length as 0
             }//end of the if else
-            
             }//end of the while
             
-            System.out.println("\t\t\tID : "+id);//show student ID number
+            System.out.println("\t\t\t\tID : "+id);//show student ID number
             
         System.out.println("----------------------------------------------------------------------------------------------------------------");
             
             System.out.println("  Code\t\t\tCourse\t\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
-            int count = 0;
+            int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;//declare counter for each subject
             int cmark1 = 0;
-            while (count == 0){
-            String course1 = JOptionPane.showInputDialog(null,"Intro to Information Systems Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for first subject's mark
-            cmark1 = Integer.parseInt(course1);//convert into mark into integer
-            count = cmark1;
-            if(cmark1 < 0){
-                JOptionPane.showMessageDialog(null,"Invalid Marks","Exam Result System",JOptionPane.ERROR_MESSAGE);
-                count-=count;
-            }else if (cmark1>100){
-                JOptionPane.showMessageDialog(null,"Invalid Marks","Exam Result System",JOptionPane.ERROR_MESSAGE);
-                count-=count;
-                }//end of the if else
+            while (count1 == 0){//to counter the question
+            String course1 = JOptionPane.showInputDialog(null,"Intro to Information Systems mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for first subject's mark
+            cmark1 = Integer.parseInt(course1);//convert user input into integer mark
+            count1 = cmark1;
+            if((cmark1 < 0)||(cmark1>100)){//to check the limit mark
+                JOptionPane.showMessageDialog(null,"Invalid Mark","Exam Result System",JOptionPane.ERROR_MESSAGE);//error message
+                count1 -= count1;//to recounter the question
+            }//end of the if else
             }//end of the while
             obj.Marks(cmark1);//send to Marks method to identify grade and points
             float savepoint1 = (3*pointer);//to calculate the grade point
-            savepoint1 = Bundarkan(savepoint1,2);
-            System.out.println("  BIS1513\t\tIntro to Information System\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint1);
+            savepoint1 = Bundarkan(savepoint1,2);//round off the value to 2 decimal points
+            System.out.println("  BIS1513\t\tIntro to Information Systems\t\t  3\t "+cmark1+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint1);
             i += cmark1;//to calculate the total of the first subject
             
-            String course2 = JOptionPane.showInputDialog(null,"C++ Programming I Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-            int cmark2 = Integer.parseInt(course2);
+            int cmark2 = 0;
+            while (count2 == 0){//to counter the question
+            String course2 = JOptionPane.showInputDialog(null,"C++ Programming I mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            cmark2 = Integer.parseInt(course2);//convert user input into integer mark
+            count2 = cmark2;
+            if((cmark2 < 0)||(cmark2>100)){//to check the limit mark
+                JOptionPane.showMessageDialog(null,"Invalid Mark","Exam Result System",JOptionPane.ERROR_MESSAGE);//ask for second subject's mark
+                count2 -= count2;//to recounter the question
+            }//end of the if else
+            }//end of the while
             obj.Marks(cmark2);//send to Marks method to identify grade and points
             float savepoint2 = (4*pointer);//to calculate the grade point
-            savepoint2 = Bundarkan(savepoint2,2);
+            savepoint2 = Bundarkan(savepoint2,2);//round off the value to 2 decimal points
             System.out.println("  BIT1214\t\tC++ Programming I\t\t\t  4\t "+cmark2+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint2 );
             c += cmark2;//to calculate the total of the second subject
             
+            int cmark3 = 0;
+            while (count3 == 0){//to counter the question
             String course3 = JOptionPane.showInputDialog(null,"Interactive Multimedia Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-            int cmark3 = Integer.parseInt(course3);
+            cmark3 = Integer.parseInt(course3);//convert user input into integer mark
+            count3 = cmark3;
+            if((cmark3 < 0)||(cmark3>100)){//to check the limit mark
+                JOptionPane.showMessageDialog(null,"Invalid Mark","Exam Result System",JOptionPane.ERROR_MESSAGE);//ask for third subject's mark
+                count3 -= count3;// to recounter the question
+            }//end of the if else
+            }//end of the while
             obj.Marks(cmark3);//send to Marks method to identify grade and points
             float savepoint3 = (3*pointer);//to calculate the grade point
-            savepoint3 = Bundarkan(savepoint3,2);
+            savepoint3 = Bundarkan(savepoint3,2);//round off the value to 2 decimal points
             System.out.println("  BIT2333\t\tInteractive Multimedia\t\t\t  3\t "+cmark3+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint3);
             m += cmark3;//to calculate the total of the third subject
             
-            String course4 = JOptionPane.showInputDialog(null,"Multimedia Technology Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-            int cmark4 = Integer.parseInt(course4);
+            int cmark4 = 0;
+            while (count4 == 0){//to counter the question
+            String course4 = JOptionPane.showInputDialog(null,"Multimedia Technology mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            cmark4 = Integer.parseInt(course4);//convert user input into integer mark
+            count4 = cmark4;
+            if((cmark4 < 0)||(cmark4>100)){//to check the mark limit
+                JOptionPane.showMessageDialog(null,"Invalid Mark","Exam Result System",JOptionPane.ERROR_MESSAGE);//ask for fourth subject's mark
+                count4 -= count4;//to recounter the question
+            }//end of the if else
+            }//end of the while
             obj.Marks(cmark4);//send to Marks method to identify grade and points
             float savepoint4 = (2*pointer);//to calculate the grade point
-            savepoint4 = Bundarkan(savepoint4,2);
+            savepoint4 = Bundarkan(savepoint4,2);//round off the value to 2 decimal points
             System.out.println("  BIT1312\t\tMultimedia Technology\t\t\t  2\t "+cmark4+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint4);
             t += cmark4;//to calculate the total of the fourth subject
             
-            String course5 = JOptionPane.showInputDialog(null,"Interaction Design Mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
-            int cmark5 = Integer.parseInt(course5);
+            int cmark5 = 0;
+            while (count5 == 0){//to counter the question
+            String course5 = JOptionPane.showInputDialog(null,"Interaction Design mark?","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            cmark5 = Integer.parseInt(course5);//convert user input into integer mark
+            count5 = cmark5;
+            if((cmark5 < 0)||(cmark5>100)){//to check the mark limitation
+                JOptionPane.showMessageDialog(null,"Invalid Mark","Exam Result System",JOptionPane.ERROR_MESSAGE);//ask for fifth subject's mark
+                count5 -= count5;//to recounter the question
+            }//end of the if else
+            }//end of the while
             obj.Marks(cmark5);//send to Marks method to identify grade and points
             float savepoint5 = (3*pointer);//to calculate the grade point
-            savepoint5 = Bundarkan(savepoint5,2);
+            savepoint5 = Bundarkan(savepoint5,2);//round off the value to 2 decimal points
             System.out.println("  BIE2243\t\tInteraction Design\t\t\t  3\t "+cmark5+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint5);
             d += cmark5;//to calculate the total of the fifth subject
             
