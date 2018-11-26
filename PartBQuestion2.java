@@ -7,17 +7,17 @@
  */
 package GroupAssignment;
 
-import java.math.BigDecimal;//import class BigDecimal to convert float in 2 decimal points
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;//import windows
+import java.math.BigDecimal;//import class BigDecimal to convert float into 2 decimal places
+import java.time.LocalDateTime;//import class LocalDateTime for date and time
+import java.time.format.DateTimeFormatter;//import class DateTimeFormatter to set the structure of date and time
+import java.util.Locale;//import class Locale for to specific the region
 
 public class PartBQuestion2 {
-    private static final DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    private static final DateTimeFormatter date = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
     static int mark;//
     static char grad, symbol;
     static float pointer;
-    
     
     public static void main(String[] args) {
         LocalDateTime now = LocalDateTime.now();
@@ -40,7 +40,7 @@ public class PartBQuestion2 {
             int counter = 0;
             int length = 0;
             while ( length == 0){// act as counter to loop the process
-            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id","Exam Result System",JOptionPane.QUESTION_MESSAGE);
+            String plus = JOptionPane.showInputDialog(null,(idx+1)+" Student Id Number\nConsists of 4 values","Exam Result System",JOptionPane.QUESTION_MESSAGE);
             counter = Integer.parseInt(plus);
             id = counter;
             //to calculate the total of digit in the number
