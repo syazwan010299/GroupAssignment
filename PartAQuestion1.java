@@ -13,24 +13,24 @@ import javax.swing.JOptionPane;//import windows
 public class PartAQuestion1 {
     public static void main(String[] args) {
         JOptionPane.showMessageDialog(null,"Welcome to Lottery Generator!\nTry Your Luck Now and WIN SOME MONEY\nGood Luck :)","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
-        char a = 'y';//variable to loop the process until user do not want to play anymore
+        char a = 'y';//variable to loop the process
         while ( a == 'y'){//if the user key in y 
-        String input = JOptionPane.showInputDialog(null,"Enter your 3-digit lottery number : ","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to key in 3 number
+        String input = JOptionPane.showInputDialog(null,"Enter your 3-digit lottery number : ","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to key in 3 numbers
         int user = Integer.parseInt(input);// Take 3 numbers from user
         Lot lot = new Lot();
         int lottery = lot.kira();
         int replace = user;// copy the user input into replace variable
-        int temp1,temp2,temp3;//to save the first, second and third digit of the user input
+        int temp1,temp2,temp3;//to save the first, second and third digit from the user input
         int random1,random2,random3;//to save the first, second and third digit of the random numbers
-        // To check the number of digits in the user input
-        int number = 0;// variables for counter to calculate the number of digits in the user input
+        // To check the amount of digits of user input
+        int number = 0;// variable for counter to calculate the number of digits in the user input
         while ( user != 0){
             user /= 10;
             ++number;
         }//end of the while
-        //To check if user input meet the requirement to use this system 
-        if ((number < 3)||(number > 3)){//if the number of digits less than 3 the system will ask again
-            JOptionPane.showMessageDialog(null,"ERROR: Your number is not available","Lottery",JOptionPane.ERROR_MESSAGE);
+        //To check if user input meet the system requirement
+        if ((number < 3)||(number > 3)){//if the number of digit less than 3 the system will ask again
+            JOptionPane.showMessageDialog(null,"ERROR: Your number is not valid","Lottery",JOptionPane.ERROR_MESSAGE);
         }else{
             temp3 = lot.split(replace);//use the split method to get the third digit of the user input
             replace = lot.delete(replace);//use the delete method to remove the third digit of the user input
