@@ -15,7 +15,7 @@ import java.util.Locale;//import class Locale for to specific the region
 
 public class PartBQuestion2 {
     private static final DateTimeFormatter date = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");//set the structure of date and time
-    static int mark;//declare int for marks enter by user
+    static int mark;//declare integer for marks entered by user
     static char grad, symbol;//declare grades and symbol
     static float pointer;//declare pointer of the grade
     
@@ -26,16 +26,16 @@ public class PartBQuestion2 {
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);//ask how many student in the class
         System.out.println("\nNumber of students in the class : "+num+"\n");//show the amount of students in the class
         System.out.println(date.format(now));//show the date and time
-        int nostudent = Integer.parseInt(num);//declare int for number of students
+        int nostudent = Integer.parseInt(num);//declare integer for number of students
         int idx;
-        float i = 0.0f, c=0.0f, m=0.0f, t=0.0f, d=0.0f;//declare float
-        PartBQuestion2 obj = new PartBQuestion2();//declare object in class
+        float i = 0.0f, c=0.0f, m=0.0f, t=0.0f, d=0.0f;//declare float for total mark of every subject
+        PartBQuestion2 obj = new PartBQuestion2();//declare object for main class
         
         for (idx=0;idx<nostudent;idx++){//for loop to ask input according number of students
-            System.out.println("----------------------------------------------------------------------------------------------------------------");
-            
+            System.out.println("================================================================================================================");
+        
             String name = JOptionPane.showInputDialog(null,(idx+1)+" student name?","Exam Result System",JOptionPane.QUESTION_MESSAGE);//ask for student name
-            System.out.print("\n  NAME : "+name);//show the student name
+            System.out.print("  NAME : "+name);//show the student name
             
             int id = 0;
             int length = 0;
@@ -62,6 +62,7 @@ public class PartBQuestion2 {
         System.out.println("----------------------------------------------------------------------------------------------------------------");
             
             System.out.println("  Code\t\t\tCourse\t\t\t\t\tCredit\tMarks\tGrade\tPoints\tTotal Points");
+            System.out.println("----------------------------------------------------------------------------------------------------------------");
             int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;//declare counter for each subject
             int cmark1 = 0;
             while (count1 == 0){//to counter the question
@@ -143,7 +144,7 @@ public class PartBQuestion2 {
             System.out.println("  BIE2243\t\tInteraction Design\t\t\t  3\t "+cmark5+"\t "+grad+symbol+"\t "+pointer+"\t   "+savepoint5);
             d += cmark5;//to calculate the total of the fifth subject
             
-        System.out.println("----------------------------------------------------------------------------------------------------------------");
+        System.out.println("________________________________________________________________________________________________________________");
             float gpa = (savepoint1+savepoint2+savepoint3+savepoint4+savepoint5);//to calculate the total grade points
             gpa = Bundarkan(gpa,2);
             float cgpa = (gpa/15);//to calculate the gpa of the student
@@ -155,11 +156,11 @@ public class PartBQuestion2 {
                 System.out.println("  Status : FAIL");
             }
         }
-        System.out.println("----------------------------------------------------------------------------------------------------------------");
+        System.out.println("================================================================================================================");
         
-            System.out.println("\n  Summary : ");
+            System.out.println("  Summary : ");
             float total1,total2, total3, total4, total5;
-            //to calculate the average mark of every subject and find it in 2 decimal places
+            //to calculate the average mark of every subject and round off it to 2 decimal places
             total1 = (i/nostudent);
             total1 = Bundarkan(total1,2);
             total2 = (c/nostudent);
@@ -189,7 +190,7 @@ public class PartBQuestion2 {
             }else if((total5>total1)&&(total5>total2)&&(total5>total3)&&(total5>total4)){//to compare the fifth subject with other subjects
                 System.out.println("\n  Best Subject  : Interaction Design");
             }else{
-                System.out.println("\n  No Best Subject");//if the comparison cannot find the best
+                System.out.println("\n  Best Subject  : None");//if the comparison cannot find the best subject
             }
             
             //to find the worst or lowest subject among those subjects
@@ -204,10 +205,10 @@ public class PartBQuestion2 {
             }else if((total5<total1)&&(total5<total2)&&(total5<total3)&&(total5<total4)){//to compare the fifth subject with other subjects
                 System.out.println("  Worst Subject  : Interaction Design");
             }else{
-                System.out.println("\n  No Worst Subject");//if the comparison cannot find the best
+                System.out.println("\n  Worst Subject  : None");//if the comparison cannot find the worst subject
             }
-            System.out.println("----------------------------------------------------------------------------------------------------------------");
-    }
+            System.out.println("================================================================================================================");
+    }    
     
     void Marks(int mark){//receive mark from user to identify the grades and points
 
