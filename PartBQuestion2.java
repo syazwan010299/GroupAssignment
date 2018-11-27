@@ -1,6 +1,5 @@
 /**
  * Program Name : Exam Result System - Part B Question 2
- * Description  : This coding 
  * @author      : Mohamad Syazwan Zulfaris bin Zainal - B04180021
  *              : Nor Fariha binti Serzali - B04180022
  * @version 2.BI

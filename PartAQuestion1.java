@@ -1,6 +1,5 @@
 /**
  * Program Name : Lottery - Part A Question 1
- * Description  : 
  * @author      : Mohamad Syazwan Zulfaris bin Zainal - B04180021
  *              : Nor Fariha binti Serzali - B04180022
  * @version 1.AI
