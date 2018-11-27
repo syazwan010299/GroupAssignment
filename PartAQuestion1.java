@@ -13,7 +13,7 @@ public class PartAQuestion1 {
     public static void main(String[] args) {
         int temp1,temp2,temp3;//to save the first, second and third digit from the user input
         int random1,random2,random3;//to save the first, second and third digit of the random numbers
-        JOptionPane.showMessageDialog(null,"Welcome to Lottery Generator!\nTry Your Luck Now and WIN SOME MONEY\nGood Luck :)","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Welcome to Lottery Generator!\n       Try Your Luck Now \n  and WIN SOME MONEY  :)","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
         char a = 'y';//variable to loop the process
         while ( a == 'y'){//if the user key in y 
         int id = 0;//for the counter
