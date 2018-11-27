@@ -13,7 +13,7 @@ public class PartAQuestion1 {
     public static void main(String[] args) {
         int temp1,temp2,temp3;//to save the first, second and third digit from the user input
         int random1,random2,random3;//to save the first, second and third digit of the random numbers
-        JOptionPane.showMessageDialog(null,"Welcome to Lottery Generator!\n       Try Your Luck Now \n  and WIN SOME MONEY  :)","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Welcome to Lottery Generator!\n       Try Your Luck Now \n  and WIN SOME MONEY  :)","Lottery",JOptionPane.INFORMATION_MESSAGE);
         char a = 'y';//variable to loop the process
         while ( a == 'y'){//if the user key in y 
         int id = 0;//for the counter
@@ -48,24 +48,21 @@ public class PartAQuestion1 {
             lottery = lot.delete(lottery);//use delete method to remove the second digit of the random numbers
             random1 = lot.split(lottery);//use the split method to get the first digit of the random number
         
-        
-            
             //To check the condition to give the reward to the user
             if ((random1==temp1)&&(random2==temp2)&&(random3==temp3)){//if the user input matches the lottery in exact order,the awrd is RM5000
-                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+"  vs.  "+temp1+" | "+temp2+" | "+temp3+"\nCONGRATULATION!!\n You have won RM 5000","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+"  vs.  "+temp1+" | "+temp2+" | "+temp3+"\nCONGRATULATION!!\n You have won RM 5000","Lottery",JOptionPane.INFORMATION_MESSAGE);
             }else if (((temp1==random1)||(temp1==random2)||(temp1==random3))&&((temp2==random1)||(temp2==random2)||(temp2==random3))&&((temp3==random1)||(temp3==random2)||(temp3==random3))){//if the user input matches three digits in different order the award is RM2000
-                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+"  vs.  "+temp1+" | "+temp2+" | "+temp3+"\nCONGRATULATION!!\n You have won RM2000","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+"  vs.  "+temp1+" | "+temp2+" | "+temp3+"\nCONGRATULATION!!\n You have won RM2000","Lottery",JOptionPane.INFORMATION_MESSAGE);
             }else if(((temp1==random1)||(temp1==random2)||(temp1==random3))||((temp2==random1)||(temp2==random2)||(temp2==random3))||((temp3==random1)||(temp3==random2)||(temp3==random3))){//if any 1 or 2 digits in the user input matches the lottery, the award is RM500
-                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+"  vs.  "+temp1+" | "+temp2+" | "+temp3+"\nCONGRATULATION!!\n You have won RM500","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+"  vs.  "+temp1+" | "+temp2+" | "+temp3+"\nCONGRATULATION!!\n You have won RM500","Lottery",JOptionPane.INFORMATION_MESSAGE);
             }else{//if any number does not meet lottery
-                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+" vs. "+temp1+" | "+temp2+" | "+temp3+"\nHA HA HA You lose.","Lottery Reward",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,random1+" | "+random2+" | "+random3+" vs. "+temp1+" | "+temp2+" | "+temp3+"\nHA HA HA You lose.","Lottery",JOptionPane.INFORMATION_MESSAGE);
             }
         }//end of the if else
         }//end of the while
         String check = JOptionPane.showInputDialog(null,"Do you want to try again?\n y-YES \t n-NO","Lottery",JOptionPane.QUESTION_MESSAGE);//ask the user to repeat or not 
         a = check.charAt(0);
-       }//end of the while
-        
+       }//end of the while 
     }//end of the main
 }//end of the class
 
@@ -84,5 +81,4 @@ class Lot{//new class specialise for to split the numbers
         d /= 10;
         return d;
     }
-    
 }//end of Lot class

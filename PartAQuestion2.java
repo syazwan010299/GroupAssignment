@@ -21,7 +21,7 @@ public class PartAQuestion2 {
         int c = length;//assign the length of input into c variable
         int add = 0;//variable for the number of vowel
         int minus = 0;//variable for the number of consonant
-        int counter = 0;//declare counter to acess every single word
+        int counter = 0;//declare counter to access every single word
         int size = 0;//to calculate the number of character
         int counter1 = 0;
         //To check if the character more than 3 characters
@@ -54,5 +54,4 @@ public class PartAQuestion2 {
         y = check.charAt(0);
         }//end of the while
     }//end of the main      
-   
 }//end of the class

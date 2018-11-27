@@ -19,7 +19,7 @@ public class PartBQuestion2 {
     static float pointer;//declare pointer of the grade
     
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null,"WELCOME TO EXAM RESULT SYSTEM :)","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"WELCOME TO EXAM RESULT SYSTEM  :)","Exam Result System",JOptionPane.INFORMATION_MESSAGE);
         LocalDateTime now = LocalDateTime.now();//create new object to calculate the time and date
         System.out.println("----------------------------------------| WELCOME TO EXAM RESULT SYSTEM |----------------------------------------");
         String num = JOptionPane.showInputDialog(null,"How many students in the class?","Exam Result System",JOptionPane.INFORMATION_MESSAGE);//ask how many student in the class
@@ -210,50 +210,47 @@ public class PartBQuestion2 {
     }    
     
     void Marks(int mark){//receive mark from user to identify the grades and points
-
             if ((mark>=80)&&(mark<=100)){
-                grad = 'A';//determiine the grade
+                grad = 'A';//determine the grade
                 symbol = ' ';
                 pointer = 4.00f;//determine the pointer
             }else if ((mark>=75)&&(mark<=79)){
-                grad = 'A';//determiine the grade
+                grad = 'A';//determine the grade
                 symbol = '-';
                 pointer = 3.67f;//determine the pointer
             }else if ((mark>=70)&&(mark<=74)){
-                grad = 'B';//determiine the grade
+                grad = 'B';//determine the grade
                 symbol = '+';
                 pointer = 3.33f;//determine the pointer
             }else if ((mark>=65)&&(mark<=69)){
-                grad = 'B';//determiine the grade
+                grad = 'B';//determine the grade
                 symbol = ' ';
                 pointer = 3.00f;//determine the pointer
             }else if ((mark>=60)&&(mark<=64)){
-                grad = 'B';//determiine the grade
+                grad = 'B';//determine the grade
                 symbol = '-';
                 pointer = 2.67f;//determine the pointer
             }else if ((mark>=55)&&(mark<=59)){
-                grad = 'C';//determiine the grade
+                grad = 'C';//determine the grade
                 symbol = '+';
                 pointer = 2.33f;//determine the pointer
             }else if ((mark>=50)&&(mark<=54)){
-                grad = 'C';//determiine the grade
+                grad = 'C';//determine the grade
                 symbol = ' ';
                 pointer = 2.00f;//determine the pointer
             }else if ((mark>=45)&&(mark<=49)){
-                grad = 'C';//determiine the grade
+                grad = 'C';//determine the grade
                 symbol = '-';
                 pointer = 1.67f;//determine the pointer
             }else if ((mark>=40)&&(mark<=44)){
-                grad = 'D';//determiine the grade
+                grad = 'D';//determine the grade
                 symbol = ' ';
                 pointer = 1.33f;//determine the pointer
             }else if((mark>=0)&&(mark<=39)){
-                grad = 'F';//determiine the grade
+                grad = 'F';//determine the grade
                 symbol = ' ';
                 pointer = 0.00f;//determine the pointer
             }
-                
-        
     }//end of method Marks
     
     public static float Bundarkan(float q , int c){//method for rounding off the value to 2 digit values

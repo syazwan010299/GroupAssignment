@@ -23,13 +23,13 @@ public class PartBQuestion1 {
         char y = 'y';//To check the user has membership card or not
         int quantity1=0, quantity2=0, quantity3=0, quantity4=0, quantity5=0, quantity6=0, quantity7=0, quantity8=0;//variables for items that user want to buy
         float total1=0.0f,total2=0.0f,total3=0.0f,total4=0.0f,total5=0.0f,total6=0.0f,total7=0.0f,total8=0.0f;//variables for each item multiple with how many purchase of every item
-        JOptionPane.showMessageDialog(null,"       WELCOME TO \n\tUNIMY SUPERMARKET","UNIMY SUPERMARKET",JOptionPane.INFORMATION_MESSAGE);//display the welcome to the unimy market window
+        JOptionPane.showMessageDialog(null,"       WELCOME TO \n\tUNIMY SUPERMARKET","Transaction System",JOptionPane.INFORMATION_MESSAGE);//display the welcome to the unimy market window
         String input = JOptionPane.showInputDialog(null,"Do you have UNIMY membership card?\nY-Yes    N-No","Transaction System",JOptionPane.INFORMATION_MESSAGE);//ask the user if they have membership card or not
         y = input.charAt(0);
         JOptionPane.showMessageDialog(null,"Code Item\n1 - Shoe   2 - Shirt\n3 - Pants   4 - Jeans\n5 - Fan   6 - Iron\n7 - Tray   8 - Rice","Transaction System",JOptionPane.INFORMATION_MESSAGE);//To show the user what is the code for every item
         if ( (y == 'y') || (y == 'Y')){
             System.out.println(date.format(now));//To display the date and time
-            System.out.println("----------------------------UNIMY SUPERMARKET---------------------------------");
+            System.out.println("------------------------------UNIMY SUPERMARKET-------------------------------");
             System.out.println("Code\t\tName\t\tPrice\t\tQuantity \t  Total");
             System.out.println("------------------------------------------------------------------------------");
             
@@ -150,7 +150,7 @@ public class PartBQuestion1 {
             
         }else if( (y == 'n') || (y == 'N')){
             System.out.println(date.format(now));//To display the date and time
-            System.out.println("----------------------------UNIMY SUPERMARKET---------------------------------");
+            System.out.println("------------------------------UNIMY SUPERMARKET-------------------------------");
             System.out.println("Code\t\tName\t\tPrice\t\tQuantity \t  Total");
             System.out.println("------------------------------------------------------------------------------");
             
@@ -245,7 +245,6 @@ public class PartBQuestion1 {
             totaldiscounts = bundar(totaldiscounts, 2);//round off the discount to two decimal places
             System.out.println("GST(Goverment Service Tax) : 6%");
             
-            
             System.out.println("------------------------------------------------------------------------------");  
             netpurchased = (float)( totalgst - totalrebate - totaldiscounts);//calculate the net total of price that user need to pay
             netpurchased = bundar( netpurchased, 2);//round off the net total price to two decimal places
@@ -266,8 +265,7 @@ public class PartBQuestion1 {
             float change = 0.0f;//variable to calculate the change after the amountpay minus the net of total price
             change = ((-1)*(netpurchased - amountpay));//to calculate the the changes of user money
             System.out.println("Change : RM " + String.format("%.2f",change));//display the changes of user money
-            System.out.println("------------------------------------------------------------------------------");
-            
+            System.out.println("------------------------------------------------------------------------------"); 
         }//end of the else
         
     }//end of the main
@@ -277,9 +275,7 @@ public class PartBQuestion1 {
         BigDecimal big = new BigDecimal(q);//declaration of new object
         big = big.setScale(c,BigDecimal.ROUND_HALF_UP);
         return big.floatValue();//return the value that has two decimal places
-    }
-    
-    
+    } 
 }
 //class to calculate the rebate 
 class Rebate{
