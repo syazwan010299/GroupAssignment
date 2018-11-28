@@ -12,6 +12,7 @@ import java.time.LocalDateTime;//import class LocalDateTime for date and time
 import java.time.format.DateTimeFormatter;//import class DateTimeFormatter to set the structure of date and time
 import java.util.Locale;//import class Locale for to specific the region
 
+
 public class PartBQuestion1 {
     private static final DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");//set the structure of date and time
     public static void main(String[] args) {
