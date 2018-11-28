@@ -24,9 +24,9 @@ public class PartAQuestion1 {
         id = user;//copy the value user into the counter
         // To check the amount of digits of user input
         int number = 0;// variable for counter to calculate the number of digits in the user input
-        while ( user != 0){
-            user /= 10;
-            ++number;
+        while ( user != 0){//To determine the user input is not 0
+            user /= 10;//To delete one digit from user input
+            ++number;//To know the length of user input
         }//end of the while
         Lot lot = new Lot();
         int lottery = lot.kira();

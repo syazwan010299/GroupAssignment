@@ -41,9 +41,9 @@ public class PartAQuestion2 {
             //To calculate the vowel and the consonant characters
             while ( length != 0){
                 name = input.charAt(counter);
-                if ( (name == 'a')||(name == 'e')||(name == 'i')||(name == 'o')||(name == 'u')||(name == 'A')||(name == 'E')||(name == 'I')||(name == 'O')||(name == 'U')){
+                if ( (name == 'a')||(name == 'e')||(name == 'i')||(name == 'o')||(name == 'u')||(name == 'A')||(name == 'E')||(name == 'I')||(name == 'O')||(name == 'U')){//to calculate the number of vowel
                     ++add;//add 1 to the add variable for each iteration
-                }else if(name != ' '){
+                }else if(name != ' '){//to calculate the consonant
                     ++minus;//add 1 to minus variable for each iteration
                 }//end of if else
                 length--;
