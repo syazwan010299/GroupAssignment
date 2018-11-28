@@ -12,9 +12,9 @@ public class PartAQuestion2 {
     public static void main(String[] args) {
         
         char y ='y';//declare variable for repeat option
-        while ( y == 'y'){
+        while ( y == 'y'){//loop to play again
           int check1 = 0;
-         while ( check1 == 0){
+         while ( check1 == 0){//loop to ask input again
         String input = JOptionPane.showInputDialog(null,"What is your name?","Alphabets Counter",JOptionPane.QUESTION_MESSAGE);//To ask the user to key in the name
         
         char name;//to assign every single word in the user input
