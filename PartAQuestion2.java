@@ -48,7 +48,7 @@ public class PartAQuestion2 {
             }//end of the while loop
             JOptionPane.showMessageDialog(null,"Name = "+input+"\nTotal characters = "+size+"\nVowels = "+add+"\nConsonants = "+minus,"Alphabets Counter",JOptionPane.INFORMATION_MESSAGE);   
         }else{
-            JOptionPane.showMessageDialog(null,"Invalid character.\nPlease enter more than 3 alphabets","Alphabets Counter",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Invalid character.\nPlease enter more than 3 alphabets","Alphabets Counter",JOptionPane.INFORMATION_MESSAGE);
         }//end of the if else
         String check = JOptionPane.showInputDialog(null,"Do you want to try again?\n y-YES \t n-NO","Alphabets Counter",JOptionPane.QUESTION_MESSAGE);//ask the user to repeat or not 
         y = check.charAt(0);
