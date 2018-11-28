@@ -13,12 +13,15 @@ public class PartAQuestion2 {
         
         char y ='y';//declare variable for repeat option
         while ( y == 'y'){
+          int check1 = 0;
+         while ( check1 == 0){
         String input = JOptionPane.showInputDialog(null,"What is your name?","Alphabets Counter",JOptionPane.QUESTION_MESSAGE);//To ask the user to key in the name
         
         char name;//to assign every single word in the user input
         char space;//to assign every single word in the user input
         int length = input.length();//assign the length of input into length variable
         int c = length;//assign the length of input into c variable
+        check1 = length;//assign the length of input into check1 variable
         int add = 0;//variable for the number of vowel
         int minus = 0;//variable for the number of consonant
         int counter = 0;//declare counter to access every single word
@@ -48,8 +51,10 @@ public class PartAQuestion2 {
             }//end of the while loop
             JOptionPane.showMessageDialog(null,"Name = "+input+"\nTotal characters = "+size+"\nVowels = "+add+"\nConsonants = "+minus,"Alphabets Counter",JOptionPane.INFORMATION_MESSAGE);   
         }else{
-            JOptionPane.showMessageDialog(null,"Invalid character.\nPlease enter more than 3 alphabets","Alphabets Counter",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Invalid character.\nPlease enter more than 3 alphabets","Alphabets Counter",JOptionPane.ERROR_MESSAGE);
+            check1 -= check1;
         }//end of the if else
+        }//end of the while loop
         String check = JOptionPane.showInputDialog(null,"Do you want to try again?\n y-YES \t n-NO","Alphabets Counter",JOptionPane.QUESTION_MESSAGE);//ask the user to repeat or not 
         y = check.charAt(0);
         }//end of the while
