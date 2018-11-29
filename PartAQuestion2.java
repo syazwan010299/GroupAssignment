@@ -43,9 +43,13 @@ public class PartAQuestion2 {
                 name = input.charAt(counter);
                 if ( (name == 'a')||(name == 'e')||(name == 'i')||(name == 'o')||(name == 'u')||(name == 'A')||(name == 'E')||(name == 'I')||(name == 'O')||(name == 'U')){//to calculate the number of vowel
                     ++add;//add 1 to the add variable for each iteration
-                }else if(name != ' '){//to calculate the consonant
+                }else if((name == 'b')||(name=='B')||(name=='c')||(name=='C')||(name=='d')||(name=='D')||(name=='f')||(name=='F')||(name=='g')||(name=='G')||(name=='h')||(name=='H')||(name=='j')||(name=='J')||(name=='k')||(name=='K')||(name=='l')||(name=='L')||(name=='m')||(name=='M')||(name=='n')||(name=='N')||(name=='p')||(name=='P')||(name=='q')||(name=='Q')||(name=='r')||(name=='R')||(name=='s')||(name=='S')||(name=='t')||(name=='T')||(name=='v')||(name=='V')||(name=='w')||(name=='W')||(name=='x')||(name=='X')||(name=='y')||(name=='Y')||(name=='z')||(name=='Z')){
                     ++minus;//add 1 to minus variable for each iteration
-                }//end of if else
+                }else if(name == ' '){//to exclude the space
+                }else{
+                  JOptionPane.showMessageDialog(null,"Invalid input.\nPlease enter more than 3 alphabets","Alphabets Counter",JOptionPane.ERROR_MESSAGE);  
+                  break;
+                }//end of the if else
                 length--;
                 counter++;
             }//end of the while loop
