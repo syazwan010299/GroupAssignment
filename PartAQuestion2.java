@@ -47,7 +47,7 @@ public class PartAQuestion2 {
                     ++minus;//add 1 to minus variable for each iteration
                 }else if(name == ' '){//to exclude the space
                 }else{
-                  JOptionPane.showMessageDialog(null,"Invalid input.\nPlease enter more than 3 alphabets","Alphabets Counter",JOptionPane.ERROR_MESSAGE);  
+                  JOptionPane.showMessageDialog(null,"Invalid input.\nPlease enter alphabets only","Alphabets Counter",JOptionPane.ERROR_MESSAGE);//error message if user enter other than alphabets 
                   break;
                 }//end of the if else
                 length--;
